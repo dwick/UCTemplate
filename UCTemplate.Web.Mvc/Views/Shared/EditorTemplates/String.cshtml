@@ -1,0 +1,13 @@
+﻿<div class="row">
+    @Html.Label(string.Empty, @ViewData.ModelMetadata.DisplayName)
+    <div class="input">
+        @Html.TextBox(string.Empty, ViewData.TemplateInfo.FormattedModelValue, new { @class = "text", autocomplete = "off" })
+        @if (!string.IsNullOrWhiteSpace(ViewData.ModelMetadata.Description))
+        {
+            <span class="help-block">@ViewData.ModelMetadata.Description</span>
+        }
+        <div>
+            @Html.ValidationMessage(string.Empty)
+        </div>
+    </div>
+</div>

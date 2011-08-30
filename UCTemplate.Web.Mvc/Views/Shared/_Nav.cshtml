@@ -1,0 +1,16 @@
+﻿<div id="uc-nav-wrap" class="container_12">
+    <ul class="sf-menu sf-js-enabled sf-shadow">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>
+            <a href="#">Help &amp; Support</a>
+            <ul>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("User's Guide", "Guide", "Home")</li>
+            </ul>
+        </li>
+        @if (User.IsInRole("DEPT.its.staff"))
+        {
+            <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+        }
+    </ul>
+</div>

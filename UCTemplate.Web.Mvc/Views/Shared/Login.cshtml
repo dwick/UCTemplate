@@ -1,0 +1,38 @@
+﻿@model LoginInput
+@{
+    ViewBag.Title = "Login";
+    var showLogout = TempData["Logout"];
+}
+@if (showLogout != null && (bool)showLogout)
+{
+    <div class="alert-message block-message warning">
+        <a class="close" href="#">×</a>
+        <p><strong>Logout successful!</strong> For security reasons, please exit your web browser.</p>
+    </div>
+}
+<div id="lead-text">
+    <h1>UCTemplate</h1>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+</div>
+<div class="form-split clearfix">
+    @using (Html.BeginForm("Login", "Login", new { returnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { @class = "form-stacked" }))
+    {
+        <fieldset>
+            <legend>Existing Users</legend>
+            <p>Please enter your domain credentials.</p>
+            @if (ViewData.ModelState.IsValid == false)
+            { 
+                @Html.ValidationSummary(true)
+            }
+            @Html.EditorFor(x => x.Username)
+            @Html.EditorFor(x => x.Password)  
+            <button type="submit"class="btn small">Login</button>
+        </fieldset>
+    }
+    <div>
+        <h1>Register</h1>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+        <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+</div>

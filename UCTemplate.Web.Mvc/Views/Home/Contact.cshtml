@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Help & Support";
+}
+
+<div id="lead-text">
+    <h1>@ViewBag.Title</h1>
+    <p>Please direct any unresolved issues to the Help Desk either by phone, email, or walk-in.  A work order will be created and a technician will be dispatched to help as soon as possible.</p>
+</div>
+<article itemscope itemtype="http://microformats.org/profile/hcard" class="meta-section">
+    <h2 itemprop="fn">UConn School of Business ITS Help Desk</h2>
+    <div itemprop="tel">
+        <label itemprop="type">(p)</label>
+        <span itemprop="value">860-486-5450</span>
+    </div>
+    <div itemprop="email">
+        <label itemprop="type">(e)</label>
+        <span itemprop="value"><a href="mailto:help@business.uconn.edu">help@business.uconn.edu</a></span>
+    </div>
+    <div itemprop="adr" class="meta-section">
+        <div itemprop="org">
+            <div itemprop="organization-name">University of Connecticut</div>
+            <div itemprop="organization-unit">School of Business</div>
+        </div>
+        <div itemprop="street-address">2100 Hillside Road Unit 1041</div>
+        <div>
+            <span itemprop="locality">Storrs</span>,
+            <span itemprop="region">CT</span>
+            <span itemprop="postal-code">06269-1041</span>
+        </div>
+    </div>
+    <div itemscope itemtype="http://microformats.org/profile/hcalendar.html" class="meta-section">
+        <h2 itemprop="summary">Hours of Operation</h2>
+        <div itemprop="location">BUSN Room 225</div>
+        <div itemprop="vevent" class="meta-section">
+            <h3 itemprop="summary">Regular Hours</h3>
+            <div>
+                <label>Monday-Thursday</label>:
+                <time datetime="08:00">8:00 AM</time>
+                -
+                <time datetime="21:00">9:00 PM</time>
+            </div> 
+            <div>
+                <label>Friday</label>:
+                <time datetime="08:00">8:00 AM</time>
+                -
+                <time datetime="16:00">4:00 PM</time>
+            </div>  
+            <div>
+                <label>Saturday-Sunday</label>:
+                Closed
+            </div>     
+        </div>
+        <div itemprop="vevent" class="meta-section">
+            <h3 itemprop="summary">Intersession Hours</h3>
+            <div>
+                <label>Monday-Friday</label>:
+                <time datetime="08:00">8:00 AM</time>
+                -
+                <time datetime="16:00">4:00 PM</time>
+            </div>  
+            <div>
+                <label>Saturday-Sunday</label>:
+                Closed
+            </div>     
+        </div>
+    </div>
+</article>

@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>@(!string.IsNullOrWhiteSpace(ViewBag.Title) ? ViewBag.Title + " | " : string.Empty)UCTemplate</title>
+    <meta name="description" content="">
+    <meta name="author" content="UConn School of Business">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")">
+    @RenderSection("css", false)
+    <script src="@Url.Content("~/Content/js/libs/modernizr-2.0.6.min.js")"></script>
+</head>
+<body>  
+    <div id="uc-wrapper">
+        <div id="uc-skip">
+            <a href="#skipNav">Skip to Navigation</a><br/>
+            <a href="#skipContent">Skip to Content</a>
+        </div>
+        <header id="uc-head" role="banner">
+            <hgroup id="uc-head-wrap" role="heading" class="container_12">
+                <h3><a href="http://uconn.edu"><span id="logo">University of Connecticut</span></a></h3>
+                <div id="uc-head-titles">
+                    <h2><a href="http://www.business.uconn.edu">School of Business</a></h2>
+                    <h1><a href="/">Account Management</a></h1>
+                </div>
+            </hgroup>
+        </header>
+        <nav id="uc-nav" role="navigation">
+            <a id="skipNav"></a>
+            @Html.Partial("_Nav")
+        </nav>          
+        <div id="uc-content" role="main">
+            <a id="skipContent"></a>
+            <div id="uc-content-wrap" class="container_16">
+                <div id="uc-col-left" class="grid_12">
+                    <div id="ie6-warning" class="alert-message block-message error">
+                        <p><strong>Your browser is unsupported!</strong> Please install <a class="external" href="http://code.google.com/chrome/chromeframe/" target="_blank">Google Chrome-frame</a> or upgrade to a modern browser to use this site. You may continue, however errors may occur.</p>
+                    </div>
+                    <div id="js-warning" class="alert-message block-message error">
+                        <p><strong>JavaScript is disabled on your browser!</strong> Please enable JavaScript or upgrade to a JavaScript-capable browser to use this site. You may continue, however errors may occur.</p>
+                    </div>
+                    @RenderBody()                
+                </div>
+                <div id="uc-col-right" class="grid_4">
+                    <div id="uc-nav-right">
+                        @Html.Action("CurrentUser", "Login")
+                    </div>
+                    @RenderSection("right", false)
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="uc-footer" role="footer">
+        <nav id="uc-footer-wrap" class="container_12">
+            <ul id="uc-foot-links">
+                <li><a href="http://uconn.edu/azindex.php">UConn A-Z Index</a></li>
+                <li><a href="http://uconn.edu/">UConn Home</a></li>
+                <li><a href="http://www.business.uconn.edu/">School of Business Home</a></li>
+                <li><a href="http://uconn.edu/disclaimers-and-copyrights.php">Disclaimers, Privacy &amp; Copyright</a></li>
+                <li>@Html.ActionLink("Contact Information", "Contact", "Home")</li>
+            </ul>
+            <span id="uc-copyright">&copy; University of Connecticut</span>
+        </nav>
+        
+    </footer>
+    <!--[if IE]><script src="@Url.Content("~/Content/js/libs/cufon.js")"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="@Url.Content("~/Content/js/libs/jquery-1.6.2.min.js")"><\/script>')</script>
+    <script>
+        Modernizr.load([
+                {
+                    test: !window.Cufon,
+                    yep: '@Url.Content("~/Content/js/plugins.js")',
+                    nope: '@Url.Content("~/Content/js/plugins-sans-cufon.js")',
+                    both: '@Url.Content("~/Content/js/script.js")'
+                }, 
+                {
+                    test: window.location.pathname.match(/admin/),
+                    yep: '@Url.Content("~/Content/js/libs/jquery-ui-1.8.16.js")',
+                    complete: function () {
+                        if(window.jQuery.ui) {
+                            $(function () {
+                                $('.date').datepicker();
+                            });
+                        }
+                    }
+                }
+            ]);
+    </script>
+    @MvcMiniProfiler.MiniProfiler.RenderIncludes(showTrivial: true, showTimeWithChildren: true)
+    @RenderSection("js", false)  
+    <!--[if lt IE 7 ]>
+        <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+        <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+</body>
+</html>

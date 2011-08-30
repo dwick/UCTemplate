@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+<div id="lead-text">
+    <h1>Something went wrong!</h1>
+    @if(ViewBag.Message != null)
+    {
+        <p>@ViewBag.Message</p>
+    }
+    <p>If this error persists, please feel free to @Html.ActionLink("contact us", "Contact", "Home").</p>
+</div>
