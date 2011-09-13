@@ -1,0 +1,15 @@
+﻿@model CurrentUserViewModel
+@if (Request.IsAuthenticated)
+{ 
+	<strong>Logged on as: @Model.DisplayName</strong>
+    <div>
+        <a href="@Url.Action("Logout", "Login")">Log out</a>
+    </div>
+}
+else
+{ 
+	<strong>Welcome</strong>
+    <div>
+        <a href="@Url.Action("Index", "Home")">Log in</a>
+    </div>
+}

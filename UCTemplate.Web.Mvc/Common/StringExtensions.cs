@@ -2,6 +2,7 @@
 {
     #region using
 
+    using System;
     using System.Globalization;
 
     #endregion
@@ -12,6 +13,11 @@
         {
             var culture = CultureInfo.InvariantCulture.TextInfo;
             return culture.ToTitleCase(culture.ToLower(s));
+        }
+
+        public static bool ContainsInsensitive(this string s, string value)
+        {
+            return s.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0;
         }
     }
 }

@@ -102,7 +102,7 @@
     <Compile Include="Controllers\AbstractController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,11 +118,13 @@
     <Compile Include="Infrastructure\Commands\ICommand.cs" />
     <Compile Include="Infrastructure\EntityFramework\UCTemplateContext.cs" />
     <Compile Include="Infrastructure\EntityFramework\Configuration\LogConfiguration.cs" />
+    <Compile Include="Infrastructure\Identity\ActiveDirectory.cs" />
+    <Compile Include="Infrastructure\Identity\ActiveDirectoryMembershipProvider.cs" />
+    <Compile Include="Infrastructure\Identity\ActiveDirectoryRoleProvider.cs" />
     <Compile Include="Infrastructure\Logging\Log4NetConfiguration.cs" />
     <Compile Include="Infrastructure\Mapping\AutoMapperExtensions.cs" />
     <Compile Include="Infrastructure\Mapping\Resolvers\GuidResolver.cs" />
     <Compile Include="Infrastructure\Mapping\Resolvers\GuidToStringConverter.cs" />
-    <Compile Include="Infrastructure\Membership\ActiveDirectoryRoleProvider.cs" />
     <Compile Include="Infrastructure\Tasks\ITask.cs" />
     <Compile Include="Infrastructure\Tasks\TaskBase.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
@@ -211,7 +213,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Shared\_Nav.cshtml" />
-    <Content Include="Views\Login\CurrentUser.cshtml" />
+    <Content Include="Views\Accounts\CurrentUser.cshtml" />
     <Content Include="Views\Error\Authorization.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Guide.cshtml" />
