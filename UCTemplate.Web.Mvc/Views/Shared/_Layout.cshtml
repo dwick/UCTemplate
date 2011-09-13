@@ -46,7 +46,7 @@
                 </div>
                 <div id="uc-col-right" class="grid_4">
                     <div id="uc-nav-right">
-                        @Html.Action("CurrentUser", "Login")
+                        @{ Html.Action("CurrentUser", "Accounts"); }
                     </div>
                     @RenderSection("right", false)
                 </div>

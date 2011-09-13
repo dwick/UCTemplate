@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\SendEmailCommand.cs" />
+    <Compile Include="Common\ActiveDirectory.cs" />
     <Compile Include="Common\Certificate.cs" />
     <Compile Include="Common\Check.cs" />
     <Compile Include="Common\ActiveDirectoryExtensions.cs" />
@@ -118,7 +119,6 @@
     <Compile Include="Infrastructure\Commands\ICommand.cs" />
     <Compile Include="Infrastructure\EntityFramework\UCTemplateContext.cs" />
     <Compile Include="Infrastructure\EntityFramework\Configuration\LogConfiguration.cs" />
-    <Compile Include="Infrastructure\Identity\ActiveDirectory.cs" />
     <Compile Include="Infrastructure\Identity\ActiveDirectoryMembershipProvider.cs" />
     <Compile Include="Infrastructure\Identity\ActiveDirectoryRoleProvider.cs" />
     <Compile Include="Infrastructure\Logging\Log4NetConfiguration.cs" />

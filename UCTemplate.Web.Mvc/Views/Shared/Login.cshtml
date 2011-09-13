@@ -16,7 +16,7 @@
     <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 </div>
 <div class="form-split clearfix">
-    @using (Html.BeginForm("Login", "Login", new { returnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { @class = "form-stacked" }))
+    @using (Html.BeginForm("Login", "Accounts", new { returnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { @class = "form-stacked" }))
     {
         <fieldset>
             <legend>Existing Users</legend>
